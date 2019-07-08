@@ -70,6 +70,12 @@ const CompletedMessageBar = styled.div`
     }
 `;
 
+const langPacksMap = {
+    "LALEN":"Mexico",
+    "SPLEN":"Spain",
+    "TULEN":"Turkey"
+};
+
 class PageLicenceGenerator extends React.Component {
     state = {
         confirmOpen: false,
@@ -209,7 +215,7 @@ class PageLicenceGenerator extends React.Component {
                     canEscapeKeyClose={false}
                 >
                     <div className={Classes.DIALOG_BODY}>
-                        <p><span>Country:&nbsp;</span>{this.state.languagePair}</p>
+                        <p><span>Country:&nbsp;</span>{langPacksMap[this.state.languagePair]}</p>
                         <p><span>School name:&nbsp;</span>{this.state.purchaserSchool}</p>
                         <p><span>Number of licences:&nbsp;</span>{this.state.numberOfLicenses}</p>
                         <p><span>Licence type:&nbsp;</span>{this.state.productType}</p>
