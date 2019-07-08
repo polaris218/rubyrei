@@ -107,7 +107,8 @@ class PageLicenceGenerator extends React.Component {
             "chargeId": "",
             "purchaseDateMS": date.getTime(),
             "gameId": "180131",
-            "productType": this.state.productType,
+            "productType": "standard",
+            "licenceType": this.state.licenceType,
             "productDetail": {"languagePair": this.state.languagePair},
             "numberOfLicenses": parseInt(this.state.numberOfLicenses),
             "purchaserEmail": this.state.purchaserEmail,
@@ -161,7 +162,7 @@ class PageLicenceGenerator extends React.Component {
             <Layout>
                 <MainWrapper>
                     <AccountToolbar>
-                        <a onClick={this._onSignout}>Logout</a>
+                        <a onClick={this._onSignout}>Log out</a>
                     </AccountToolbar>
                     <SectionWrapper>
                         <h1>FUN with Ruby Rei</h1>
@@ -193,9 +194,9 @@ class PageLicenceGenerator extends React.Component {
                                 <FormGroup className="form-group" label="Number of logins">
                                     <InputGroup large placeholder="e.g. 64" name="numberOfLicenses" onChange={this._onChange}/>
                                 </FormGroup>
-                                <RadioGroup inline className="form-group" label="Licence type" name="productType" onChange={this._onChange} selectedValue={this.state.productType}>
-                                    <Radio label="Trial version" value="trial"/>
-                                    <Radio label="Full version" value="standard"/>
+                                <RadioGroup inline className="form-group" label="Licence type" name="licenceType" onChange={this._onChange} selectedValue={this.state.licenceType}>
+                                    <Radio label="Trial version" value="demo_v2"/>
+                                    <Radio label="Full version" value=""/>
                                 </RadioGroup>
                                 <FormGroup className="form-group" label="Teacher or school email address">
                                     <InputGroup large placeholder="e.g. teacher@school.com" type="email" name="purchaserEmail" onChange={this._onChange}/>
@@ -218,7 +219,7 @@ class PageLicenceGenerator extends React.Component {
                         <p><span>Country:&nbsp;</span>{langPacksMap[this.state.languagePair]}</p>
                         <p><span>School name:&nbsp;</span>{this.state.purchaserSchool}</p>
                         <p><span>Number of licences:&nbsp;</span>{this.state.numberOfLicenses}</p>
-                        <p><span>Licence type:&nbsp;</span>{this.state.productType}</p>
+                        <p><span>Licence type:&nbsp;</span>{this.state.licenceType === "demo_v2" ? "Trial" : "Full"}</p>
                         <p><span>Teacher/school email address:&nbsp;</span>{this.state.purchaserEmail}</p>
                         <p><span>Your email address:&nbsp;</span>{this.state.sellerEmail}</p>
                     </div>

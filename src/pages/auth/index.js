@@ -84,6 +84,9 @@ class AuthPage extends React.Component {
             <Layout>
                 <MainWrapper>
                     <SectionWrapper>
+                        <h1>FUN with Ruby Rei</h1>
+                        <h2>Licence Generator Login</h2>
+
                         <Form onSubmit={this._onSubmit}>
                             <FormGroup className="form-group" label="Username">
                                 <InputGroup large name="username" placeholder="Your username" onChange={this._onChange}/>
