@@ -164,9 +164,9 @@ class PageLicenceGenerator extends React.Component {
                         {this.state.completed &&
                             <CompletedMessageBar>
                                 <p>LICENCES GENERATED SUCCESSFULLY.</p>
-                                <br>
+                                <br/>
                                 <p>The licences have been sent to the email addresses you provided.</p>
-                                <br>
+                                <br/>
                                 <p>What would you like to do next?&nbsp;<a onClick={this._onRestore}>Generate a new set of licences</a> or <a onClick={this._onSignout}>log out</a></p>
                             </CompletedMessageBar>
                         }
