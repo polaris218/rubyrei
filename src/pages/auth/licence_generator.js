@@ -108,7 +108,7 @@ class PageLicenceGenerator extends React.Component {
             "purchaseDateMS": date.getTime(),
             "gameId": "180131",
             "productType": "standard",
-            "licenceType": this.state.licenceType,
+            "licenseType": this.state.licenceType,
             "productDetail": {"languagePair": this.state.languagePair},
             "numberOfLicenses": parseInt(this.state.numberOfLicenses),
             "purchaserEmail": this.state.purchaserEmail,
