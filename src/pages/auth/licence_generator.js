@@ -158,13 +158,16 @@ class PageLicenceGenerator extends React.Component {
                         <a onClick={this._onSignout}>Logout</a>
                     </AccountToolbar>
                     <SectionWrapper>
-                        <h1>Fun with Ruby Rei</h1>
-                        <h2>Generate and send credentials</h2>
+                        <h1>FUN with Ruby Rei</h1>
+                        <h2>Licence Generation Form</h2>
 
                         {this.state.completed &&
                             <CompletedMessageBar>
-                                <p>Licences generated successfully. An email with the licences created is also been sent to the specified email address.</p>
-                                <p>What do you want do next?&nbsp;<a onClick={this._onRestore}>Generate a new set of licences</a> or <a onClick={this._onSignout}>Logout</a></p>
+                                <p>LICENCES GENERATED SUCCESSFULLY.</p>
+                                <br>
+                                <p>The licences have been sent to the email addresses you provided.</p>
+                                <br>
+                                <p>What would you like to do next?&nbsp;<a onClick={this._onRestore}>Generate a new set of licences</a> or <a onClick={this._onSignout}>log out</a></p>
                             </CompletedMessageBar>
                         }
 
@@ -181,7 +184,7 @@ class PageLicenceGenerator extends React.Component {
                                 <FormGroup className="form-group" label="School name">
                                     <InputGroup large placeholder="e.g. Cambridge School" name="purchaserSchool" onChange={this._onChange}/>
                                 </FormGroup>
-                                <FormGroup className="form-group" label="Number of licences">
+                                <FormGroup className="form-group" label="Number of logins">
                                     <InputGroup large placeholder="e.g. 64" name="numberOfLicenses" onChange={this._onChange}/>
                                 </FormGroup>
                                 <RadioGroup inline className="form-group" label="Licence type" name="productType" onChange={this._onChange} selectedValue={this.state.productType}>
@@ -201,7 +204,7 @@ class PageLicenceGenerator extends React.Component {
                 </MainWrapper>
                 <Dialog
                     onClose={this._onCancelGeneration}
-                    title="Confirm licences generation"
+                    title="Confirm your licence details"
                     isOpen={this.state.confirmOpen}
                     canEscapeKeyClose={false}
                 >
