@@ -5,6 +5,7 @@ import Layout from "./layout";
 import { FormGroup, InputGroup, HTMLSelect, RadioGroup, Radio, Button, Dialog, Spinner, Classes } from "@blueprintjs/core";
 import SectionWrapper from '../../components/SectionWrapper';
 import { AxiosClient } from "../../components/Utils";
+import FunLogoMain from "../../assets/img/fun-ruby-logo-main.png";
 
 var AuthService = null;
 if (typeof window !== `undefined`) {
@@ -27,6 +28,13 @@ const MainWrapper = styled.div`
     h2 {
         font-weight: 400;
         font-size: 1.2em;
+    }
+    .fun-logo {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        max-width: 150px;
     }
 `;
 
@@ -60,8 +68,8 @@ const AccountToolbar = styled.div`
 
 const CompletedMessageBar = styled.div`
     display: block;
-    color: #F5F8FA;
-    background-color: #3DCC91;
+    color: ##182026;
+    background-color: #f2f2f2;
     padding: 24px;
 
     a {
@@ -165,8 +173,8 @@ class PageLicenceGenerator extends React.Component {
                         <a onClick={this._onSignout}>Log out</a>
                     </AccountToolbar>
                     <SectionWrapper>
-                        <h1>FUN with Ruby Rei</h1>
-                        <h2>Licence Generation Form</h2>
+                        <p><img className="fun-logo" src={FunLogoMain} alt="FUN with Ruby Rei logo"/></p>
+                        <h1>Licence Generation Form</h1>
 
                         {this.state.completed &&
                             <CompletedMessageBar>
@@ -174,7 +182,7 @@ class PageLicenceGenerator extends React.Component {
                                 <br/>
                                 <p>The licences have been sent to the email addresses you provided.</p>
                                 <br/>
-                                <p>What would you like to do next?&nbsp;<a onClick={this._onRestore}>Generate a new set of licences</a> or <a onClick={this._onSignout}>log out</a></p>
+                                <p><h3><b>What would you like to do next?</b></h3><a onClick={this._onRestore}>Generate a new set of licences</a>  |  <a onClick={this._onSignout}>Log out</a></p>
                             </CompletedMessageBar>
                         }
 

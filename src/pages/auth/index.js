@@ -5,7 +5,7 @@ import Layout from "./layout";
 import { FormGroup, InputGroup, Button, Classes, /*Toaster, Position, Intent*/ } from "@blueprintjs/core";
 import SectionWrapper from '../../components/SectionWrapper';
 import { AxiosClient } from "../../components/Utils";
-import FunLogoMain from "../assets/img/fun-ruby-logo-main.png";
+import FunLogoMain from "../../assets/img/fun-ruby-logo-main.png";
 
 var AuthService = null;
 if (typeof window !== `undefined`) {
@@ -28,7 +28,11 @@ const MainWrapper = styled.div`
         font-size: 1.2em;
     }
     .fun-logo {
-        max-width: 60px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        max-width: 200px;
     }
 `;
 
@@ -88,10 +92,8 @@ class AuthPage extends React.Component {
             <Layout>
                 <MainWrapper>
                     <SectionWrapper>
-                        <p><img className="fun-logo" src={WibbuLogo} alt="FUN with Ruby Rei logo"/></p>
-                        </br></br>
-                        <h1>FUN with Ruby Rei</h1>
-                        <h2>Licence Generator Login</h2>
+                        <p><img className="fun-logo" src={FunLogoMain} alt="FUN with Ruby Rei logo"/></p>
+                        <h1>Licence Generator Login</h1>
 
                         <Form onSubmit={this._onSubmit}>
                             <FormGroup className="form-group" label="Username">
