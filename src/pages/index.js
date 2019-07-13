@@ -206,7 +206,7 @@ export default () => (
                                 <StoreBadge apple/>
                                 <StoreBadge google/>
                             </div>
-                            <Body xs>If you haven't purchased Ruby Rei, <a href="#">click here</a> to contact Cambridge Sales</Body>
+                            <Body xs>If you haven't purchased Ruby Rei <a href="#">click here</a> to contact Cambridge Sales</Body>
                             <div className="pub-logos">
                                 <div className="centered">
                                     <p><img className="logo cambridge-logos" src={CambridgeLogos} alt="Cambridge University Press logo"/></p>
