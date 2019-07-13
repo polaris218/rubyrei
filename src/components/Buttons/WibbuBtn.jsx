@@ -21,6 +21,6 @@ export default styled.a`
 
     &:hover {
         color: #fff;
-        text-decoration: underline;
+        text-decoration: none;
     }
 `;

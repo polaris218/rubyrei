@@ -14,7 +14,7 @@ const LogoWrapper = styled.a`
     display: block;
     width: 150px;
     margin: 0 auto;
-    margin-top: 32px;
+    margin-top: 50px;
 
     ${Media.desktop`
         width: 200px;

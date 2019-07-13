@@ -28,9 +28,19 @@ export default styled.div`
             text-transform: uppercase;
             background-color: #97c885;
             padding: 8px 16px;
+            transition: transform .125s;
 
-            &:first-child { margin-right: 8px; }
-            &:last-child { margin-left: 8px; }
+            &:first-child { margin-right: 16px; }
+            &:last-child { margin-left: 16px; }
+
+
+        }
+              
+        .modal-btn:hover {
+                -ms-transform: scale(1.1); /* IE 9 */
+                -webkit-transform: scale(1.1); /* Safari 3-8 */
+                transform: scale(1.1);
+                text-decoration: none;
         }
     }
 `;

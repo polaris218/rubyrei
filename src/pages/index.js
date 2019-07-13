@@ -32,13 +32,16 @@ const GlobalStyle = createGlobalStyle`
         height: auto;
     }
 
-    a,
-    a:visited {
+    a {
         color: ${Palette.SandYellow}
+    }
+    a:visited {
+        text-decoration: none;
+        // color: ${Palette.SandYellow}
     }
 
     a:hover {
-        text-decoration: none;
+        color: ${Palette.SandYellow}
     }
 `;
 
@@ -72,6 +75,17 @@ const HeroBlock = styled.div`
     display: block;
     overflow: hidden;
     text-align: center;
+
+    .zoom {
+    transition: transform .125s;
+    }
+          
+    .zoom:hover {
+            -ms-transform: scale(1.1); /* IE 9 */
+            -webkit-transform: scale(1.1); /* Safari 3-8 */
+            transform: scale(1.1);
+            text-decoration: none;
+    }
 
     ${Media.tablet`
         padding-bottom: 80px;
@@ -197,16 +211,18 @@ export default () => (
                 <div id="site-content">
                     <SectionWrapper>
                         <HeroBlock id="hero">
-                            <Header color={Palette.SandYellow}>An innovative digital language-learning adventure  for upper-primary level learners.</Header>
+                            <Header color={Palette.SandYellow}>An innovative digital language-learning adventure<br/>for upper-primary level learners</Header>
                             <div className="desktop-ctas">
                                 <DownloadAppCta/>
-                                <WibbuBtn className="cta-pdf" color="dark" href="#">Worksheets (PDF)</WibbuBtn>
+                                <WibbuBtn className="cta-pdf zoom" color="dark" href="#">Worksheets (PDF)</WibbuBtn>
                             </div>
                             <div className="store-badges">
                                 <StoreBadge apple/>
                                 <StoreBadge google/>
                             </div>
-                            <Body xs>If you haven't purchased Ruby Rei <a href="#">click here</a> to contact Cambridge Sales</Body>
+                            <Body xs>FUN with Ruby Rei is currently available in <b>Turkey</b> and <b>Mexico</b>.
+                            <p>If you’d like to find out more about Ruby Rei for your country, please <a href="https://www.cambridge.org/cambridgeenglish/contact" target="_blank">contact your local Cambridge representative</a>.</p>
+                            </Body>
                             <div className="pub-logos">
                                 <div className="centered">
                                     <p><img className="logo cambridge-logos" src={CambridgeLogos} alt="Cambridge University Press logo"/></p>

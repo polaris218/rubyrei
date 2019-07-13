@@ -104,13 +104,12 @@ export default (props) => (
     <SiteFooter id="site-footer">
         <div id="footer-nav">
             <nav>
-                <FooterNavLink href="//wibbu.com">FAQ</FooterNavLink>
-                <FooterNavLink href="//wibbu.com">Contact</FooterNavLink>
-                <FooterNavLink href="//wibbu.com">Privacy Policy</FooterNavLink>
-                <FooterNavLink href="//wibbu.com">Terms of Service</FooterNavLink>
+                <FooterNavLink href="http://help.rubyrei.com" target="_blank">FAQ</FooterNavLink>
+                <FooterNavLink href="https://www.cambridge.org/cambridgeenglish/contact" target="_blank">Contact</FooterNavLink>
+                <FooterNavLink href="https://www.cambridge.org/about-us/legal-notices/privacy-notice/" target="_blank">Privacy Policy</FooterNavLink>
             </nav>
         </div>
-        <div className="social-links">
+        {/* <div className="social-links">
             <ul>
                 <li>
                     <FooterNavLink href="#">ic</FooterNavLink>
@@ -122,13 +121,14 @@ export default (props) => (
                     <FooterNavLink href="#">ic</FooterNavLink>
                 </li>
             </ul>
-        </div>
-        <div className="store-links"></div>
-        <div className="policy">
+        </div> */}
+        {/* <div className="store-links"></div> */}
+        {/* <div className="policy">
             <p>9 Devonshire Square, Spitalfields, London EC2M 4YD</p>
-        </div>
+        </div> */}
         <div className="copy">
-            <p>Copyright &copy; 2019 Wibbu Ltd. -  All right reserved</p>
+            <p>Copyright &copy; 2019 UCLES, Cambridge University Press, Wibbu Ltd. - All rights reserved
+</p>
         </div>
     </SiteFooter>
 );
