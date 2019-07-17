@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet"
 import styled from "styled-components";
 import reset from "normalize.css";
 import { Media } from "../components/Utils";
@@ -16,6 +17,20 @@ import WibbuLogo from "../assets/img/wibbu-logo.png";
 import RubyFigureImg from "../assets/img/ruby-figure.png";
 import DownloadAppCta from "../components/DownloadAppCta";
 import { WibbuBtn } from "../components/Buttons";
+
+class Application extends React.Component {
+    render() {
+      return (
+        <div className="application">
+          <Helmet>
+            <meta charSet="utf-8" />
+            <title>FUN with Ruby Rei</title>
+            <link rel="canonical" href="https://fun.rubyrei.com" />
+          </Helmet>
+        </div>
+      )
+    }
+  }
 
 const GlobalStyle = createGlobalStyle`
     @import url('https://fonts.googleapis.com/css?family=Open+Sans:600,700&display=swap');
@@ -201,6 +216,7 @@ const RubyFigure = styled.div`
         height: 500px;
     `}
 `;
+
 
 export default () => (
     <React.Fragment>
