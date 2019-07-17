@@ -214,7 +214,7 @@ export default () => (
                             <Header color={Palette.SandYellow}>An innovative digital language-learning adventure<br/>for upper-primary level learners</Header>
                             <div className="desktop-ctas">
                                 <DownloadAppCta/>
-                                <WibbuBtn className="cta-pdf zoom" color="dark" href="#">Worksheets (PDF)</WibbuBtn>
+                                <WibbuBtn className="cta-pdf zoom" color="dark" href="https://firebasestorage.googleapis.com/v0/b/ruby-rei-setup/o/FUN-with-Ruby-Rei-Materials-Worksheets.zip?alt=media&token=33ab395f-d9f2-40ae-9f36-f51f868e5ac9">Worksheets (PDF)</WibbuBtn>
                             </div>
                             <div className="store-badges">
                                 <StoreBadge apple/>
