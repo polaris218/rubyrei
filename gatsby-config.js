@@ -5,7 +5,7 @@
  */
 
 module.exports = {
-    plugins: [`gatsby-plugin-react-helmet`],
+    // plugins: [`gatsby-plugin-react-helmet`],
   // siteMetadata: {
   //   title: `FUN with Ruby Rei`,
   //   siteUrl: `https://fun.rubyrei.com`,

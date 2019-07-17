@@ -1,5 +1,5 @@
 import React from "react";
-import { Helmet } from "react-helmet"
+import { Helmet } from "react-helmet";
 import styled from "styled-components";
 import reset from "normalize.css";
 import { Media } from "../components/Utils";
@@ -18,19 +18,6 @@ import RubyFigureImg from "../assets/img/ruby-figure.png";
 import DownloadAppCta from "../components/DownloadAppCta";
 import { WibbuBtn } from "../components/Buttons";
 
-class Application extends React.Component {
-    render() {
-      return (
-        <div className="application">
-          <Helmet>
-            <meta charSet="utf-8" />
-            <title>FUN with Ruby Rei</title>
-            <link rel="canonical" href="https://fun.rubyrei.com" />
-          </Helmet>
-        </div>
-      )
-    }
-  }
 
 const GlobalStyle = createGlobalStyle`
     @import url('https://fonts.googleapis.com/css?family=Open+Sans:600,700&display=swap');
@@ -225,6 +212,12 @@ export default () => (
             <MainWrapper>
                 <SiteHeader />
                 <div id="site-content">
+                    <Helmet>
+                        <title>FUN with Ruby Rei</title>
+                        <meta name="description" content="A2 Flyers Digital English Course" />
+                        <meta charSet="utf-8" />
+                        <link rel="canonical" href="https://fun.rubyrei.com" />
+                    </Helmet>
                     <SectionWrapper>
                         <HeroBlock id="hero">
                             <Header color={Palette.SandYellow}>An innovative digital language-learning adventure<br/>for upper-primary level learners</Header>

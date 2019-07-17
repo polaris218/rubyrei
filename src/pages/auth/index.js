@@ -1,4 +1,5 @@
 import React from "react";
+import {Helmet} from "react-helmet";
 import { navigate } from "gatsby";
 import styled from "styled-components";
 import Layout from "./layout";
@@ -91,6 +92,14 @@ class AuthPage extends React.Component {
         return(
             <Layout>
                 <MainWrapper>
+                    <div>
+                    <Helmet>
+                        <title>Licence Generator - FUN with Ruby Rei</title>
+                        <meta name="description" content="Licence Generator for FUN with Ruby Rei" />
+                        <meta charSet="utf-8" />
+                        <link rel="canonical" href="https://fun.rubyrei.com/auth" />
+                    </Helmet>
+                    </div>
                     <SectionWrapper>
                         <p><img className="top-logos" src={FwRRCEPLogos} alt="FUN with Ruby Rei and Cambridge Exam Preparation logos"/></p>
                         <h1>Licence Generator Login</h1>
