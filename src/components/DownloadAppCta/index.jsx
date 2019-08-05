@@ -43,10 +43,10 @@ class DownloadAppCta extends React.Component {
             <React.Fragment>
                 <WibbuBtn className="cta-app zoom" onClick={this._confirmDownload}>Download (PC)</WibbuBtn>
                 <DownloadModal style={{display: displaySpeedbump}}>
-                    <p>You are about to download FUN with Ruby Rei on this computer (700MB). <br/>If you don't have a login, please <a href="https://www.cambridge.org/cambridgeenglish/contact" target="_blank">contact us</a> before downloading.</p>
+                    <p>You are about to download FUN with Ruby Rei on this computer (851MB). <br/>If you don't have a login, please <a href="https://www.cambridge.org/cambridgeenglish/contact" target="_blank">contact us</a> before downloading.</p>
                     <p>Do you wish to continue?</p>
                     <footer>
-                        <a className="modal-btn" href="#">YES</a>
+                        <a className="modal-btn" href="https://firebasestorage.googleapis.com/v0/b/ruby-rei-setup/o/FUN%20with%20Ruby%20Rei%20Setup%20v3-0-0b6.exe?alt=media&token=92ced6ab-961d-4964-8eeb-28598b68740c">YES</a>
                         <a className="modal-btn" onClick={this._cancelDownload}>NO</a>
                     </footer>
                 </DownloadModal>
