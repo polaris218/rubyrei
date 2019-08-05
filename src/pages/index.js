@@ -205,6 +205,7 @@ const RubyFigure = styled.div`
 `;
 
 
+
 export default () => (
     <React.Fragment>
         <GlobalStyle />
