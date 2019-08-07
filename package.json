@@ -22,6 +22,8 @@
     "gatsby-plugin-google-analytics": "^2.1.6",
     "gatsby-plugin-intercom": "^0.1.4",
     "gatsby-plugin-styled-components": "^3.0.7",
+    "gatsby-remark-embed-video": "^1.7.1",
+    "gatsby-transformer-remark": "^2.6.10",
     "normalize.css": "^8.0.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",

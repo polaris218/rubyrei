@@ -18,7 +18,6 @@ import RubyFigureImg from "../assets/img/ruby-figure.png";
 import DownloadAppCta from "../components/DownloadAppCta";
 import { WibbuBtn } from "../components/Buttons";
 
-
 const GlobalStyle = createGlobalStyle`
     @import url('https://fonts.googleapis.com/css?family=Open+Sans:600,700&display=swap');
 
@@ -89,6 +88,39 @@ const HeroBlock = styled.div`
             text-decoration: none;
     }
 
+    .video {
+        display: block;
+        width: 224px;
+        height: 176px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 32px;
+        box-shadow: 1px 1px 10px #000000AA;
+
+
+        ${Media.tablet`
+        display: block;
+        width: 448px;
+        height: 252px;
+        margin-top: -32px;
+        margin-bottom: 50px;
+        margin-left: auto;
+        margin-right: auto;
+        box-shadow: 2px 2px 10px #000000AA;
+        `}
+            
+        ${Media.desktop`
+            display: block;
+            width: 560px;
+            height: 315px;
+            margin-top: -32px;
+            margin-bottom: 50px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 2px 2px 10px #000000AA;
+        `}
+    }
+
     ${Media.tablet`
         padding-bottom: 80px;
     `}
@@ -100,15 +132,16 @@ const HeroBlock = styled.div`
 
         ${Media.tablet`
             display: block;
-            font-size: 1.5em;
+            font-size: 1.3em;
             max-width: 500px;
             margin: 0 auto;
-            margin-top: 64px;
+            margin-top: 32px;
             margin-bottom: 64px;
         `}
 
         ${Media.desktop`
             max-width: 700px;
+            font-size: 1.5m;
         `}
     }
 
@@ -133,6 +166,10 @@ const HeroBlock = styled.div`
 
                 &:first-child { margin-right: 8px; }
                 &:last-child { margin-left: 8px; }
+            }
+
+            .dark-text {
+                color: black;
             }
         `}
     }
@@ -190,7 +227,7 @@ const RubyFigure = styled.div`
         display: block;
         position: absolute;
         bottom: 35%;
-        right: 56px;
+        right: 0px;
         background: transparent url(${RubyFigureImg}) center top no-repeat;
         background-size: contain;
         width: 200px;
@@ -198,7 +235,7 @@ const RubyFigure = styled.div`
     `}
     
     ${Media.desktop`
-        right: 96px;
+        right: 80px;
         width: 200px;
         height: 500px;
     `}
@@ -221,10 +258,14 @@ export default () => (
                     </Helmet>
                     <SectionWrapper>
                         <HeroBlock id="hero">
-                            <Header color={Palette.SandYellow}>An innovative digital language-learning adventure<br/>for upper-primary level learners</Header>
+                            <Header color={Palette.SandYellow}>An innovative digital language-learning adventure<br/>for A2 level learners</Header>
+                            <div className="video">
+                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/3WqX_Ca6q98" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
                             <div className="desktop-ctas">
                                 <DownloadAppCta/>
                                 <WibbuBtn className="cta-pdf zoom" color="dark" href="https://firebasestorage.googleapis.com/v0/b/ruby-rei-setup/o/FUN-with-Ruby-Rei-Materials-Worksheets.zip?alt=media&token=33ab395f-d9f2-40ae-9f36-f51f868e5ac9">Worksheets (PDF)</WibbuBtn>
+                                <WibbuBtn className="dark-text zoom" color="white" href="http://help.rubyrei.com/en/collections/1786829-fun-with-ruby-rei-for-a2-flyers-school-version">Read our FAQs</WibbuBtn>
                             </div>
                             <div className="store-badges">
                                 <StoreBadge apple/>

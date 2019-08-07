@@ -1,10 +1,12 @@
 import styled from "styled-components";
 import PinkButtonBg from "../../assets/img/buttons-pink.png";
 import DarkButtonBg from "../../assets/img/buttons-dark.png";
+import WhiteButtonBg from "../../assets/img/buttons-white.png";
 
 const COLORS = {
     'dark': DarkButtonBg,
-    'pink': PinkButtonBg
+    'pink': PinkButtonBg,
+    'white': WhiteButtonBg
 }
 
 export default styled.a`

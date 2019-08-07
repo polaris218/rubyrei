@@ -6,7 +6,7 @@ import { Media } from "../Utils";
 const Header = styled.header`
     display: block;
     padding-top: 16px;
-    padding-bottom: 16px;
+    padding-bottom: 0px;
     overflow: hidden;
 `;
 
@@ -14,11 +14,15 @@ const LogoWrapper = styled.a`
     display: block;
     width: 150px;
     margin: 0 auto;
-    margin-top: 50px;
+    margin-top: 100px;
 
     ${Media.desktop`
-        width: 200px;
+        width: 250px;
     `}
+
+    ${Media.tablet`
+    width: 200px;
+`}
 `;
 
 export default (props) => (

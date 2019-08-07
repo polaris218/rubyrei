@@ -31,7 +31,7 @@ const GooglePlayWrapper = styled(StoreBadge)`
 `;
 
 export default (props) => (props.apple ? 
-    <AppleStoreWrapper href="#">&nbsp;</AppleStoreWrapper> 
+    <AppleStoreWrapper href="https://apps.apple.com/app/id1438103745">&nbsp;</AppleStoreWrapper> 
     : 
-    <GooglePlayWrapper href="#">&nbsp;</GooglePlayWrapper>
+    <GooglePlayWrapper href="https://play.google.com/store/apps/details?id=com.wibbu.rubyrei.schoolversion">&nbsp;</GooglePlayWrapper>
 );
