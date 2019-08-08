@@ -41,7 +41,7 @@ class DownloadAppCta extends React.Component {
         const displaySpeedbump = this.state.showSpeedbump ? 'block' : 'none';
         return(
             <React.Fragment>
-                <WibbuBtn className="cta-app zoom" onClick={this._confirmDownload}>Download (PC)</WibbuBtn>
+                <WibbuBtn className="cta-app zoom" color="pink" onClick={this._confirmDownload}>Download (PC)</WibbuBtn>
                 <DownloadModal style={{display: displaySpeedbump}}>
                     <p>You are about to download FUN with Ruby Rei on this computer (851MB). <br/>If you don't have a login, please <a href="https://www.cambridge.org/cambridgeenglish/contact" target="_blank">contact us</a> before downloading.</p>
                     <p>Do you wish to continue?</p>

@@ -47,6 +47,9 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const SiteWrapper = styled.div`
+
+        bottom-padding: 100;
+
     ${Media.desktop`
         display: block;
         overflow: hidden;
@@ -227,17 +230,18 @@ const RubyFigure = styled.div`
         display: block;
         position: absolute;
         bottom: 35%;
-        right: 0px;
+        right: 2%;
         background: transparent url(${RubyFigureImg}) center top no-repeat;
         background-size: contain;
-        width: 200px;
-        height: 300px;
+        width: 220px;
+        height: 550px;
     `}
     
     ${Media.desktop`
+        bottom: 28%;
         right: 80px;
-        width: 200px;
-        height: 500px;
+        width: 240px;
+        height: 600px;
     `}
 `;
 
@@ -264,8 +268,8 @@ export default () => (
                             </div>
                             <div className="desktop-ctas">
                                 <DownloadAppCta/>
-                                <WibbuBtn className="cta-pdf zoom" color="dark" href="https://firebasestorage.googleapis.com/v0/b/ruby-rei-setup/o/FUN-with-Ruby-Rei-Materials-Worksheets.zip?alt=media&token=33ab395f-d9f2-40ae-9f36-f51f868e5ac9">Worksheets (PDF)</WibbuBtn>
-                                <WibbuBtn className="dark-text zoom" color="white" href="http://help.rubyrei.com/en/collections/1786829-fun-with-ruby-rei-for-a2-flyers-school-version">Read our FAQs</WibbuBtn>
+                                <WibbuBtn className="cta-pdf zoom" color="blue" href="https://firebasestorage.googleapis.com/v0/b/ruby-rei-setup/o/FUN-with-Ruby-Rei-Materials-Worksheets.zip?alt=media&token=33ab395f-d9f2-40ae-9f36-f51f868e5ac9">Worksheets (PDF)</WibbuBtn>
+                                <WibbuBtn className="zoom" color="light-green" href="http://help.rubyrei.com/en/collections/1786829-fun-with-ruby-rei-for-a2-flyers-school-version">Read our FAQs</WibbuBtn>
                             </div>
                             <div className="store-badges">
                                 <StoreBadge apple/>

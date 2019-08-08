@@ -14,14 +14,16 @@ const LogoWrapper = styled.a`
     display: block;
     width: 150px;
     margin: 0 auto;
-    margin-top: 100px;
+    margin-top: 30px;
 
     ${Media.desktop`
         width: 250px;
+        margin-top: 80px;
     `}
 
     ${Media.tablet`
     width: 200px;
+    margin-top: 80px;
 `}
 `;
 

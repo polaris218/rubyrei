@@ -1,19 +1,23 @@
 import styled from "styled-components";
 import PinkButtonBg from "../../assets/img/buttons-pink.png";
-import DarkButtonBg from "../../assets/img/buttons-dark.png";
+import BlueButtonBg from "../../assets/img/buttons-blue.png";
 import WhiteButtonBg from "../../assets/img/buttons-white.png";
+import OrangeButtonBg from "../../assets/img/buttons-orange.png";
+import LightGreenButtonBg from "../../assets/img/buttons-lightgreen.png";
 
 const COLORS = {
-    'dark': DarkButtonBg,
+    'blue': BlueButtonBg,
     'pink': PinkButtonBg,
-    'white': WhiteButtonBg
+    'white': WhiteButtonBg,
+    'orange': OrangeButtonBg,
+    'light-green': LightGreenButtonBg
 }
 
 export default styled.a`
     display: block;
     color: #FFFFFF;
     text-transform: uppercase;
-    background-image: url(${props => COLORS[props.color] || PinkButtonBg});
+    background-image: url(${props => COLORS[props.color]});
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
