@@ -48,8 +48,6 @@ const GlobalStyle = createGlobalStyle`
 
 const SiteWrapper = styled.div`
 
-        bottom-padding: 100;
-
     ${Media.desktop`
         display: block;
         overflow: hidden;
@@ -181,7 +179,7 @@ const HeroBlock = styled.div`
         display: block;
         overflow: hidden;
         margin-top: 40px;
-        margin-bottom: 24px;
+        margin-bottom: 32px;
 
         .cambridge-logos {
             max-width: 260px;
@@ -225,24 +223,29 @@ const HeroBlock = styled.div`
 
 const RubyFigure = styled.div`
     display: none;
-
-    ${Media.tablet`
-        display: block;
-        position: absolute;
-        bottom: 35%;
-        right: 2%;
-        background: transparent url(${RubyFigureImg}) center top no-repeat;
-        background-size: contain;
-        width: 220px;
-        height: 550px;
-    `}
+    position: relative;
     
+    ${Media.tablet`
+    display: block;
+    position: absolute;
+    bottom: 35%;
+    right: 2%;
+    background: transparent url(${RubyFigureImg}) no-repeat;
+    background-size: contain;
+    width: 220px;
+    height: 550px;
+`}
+
     ${Media.desktop`
         bottom: 28%;
         right: 80px;
         width: 240px;
         height: 600px;
     `}
+
+
+
+
 `;
 
 
@@ -262,7 +265,7 @@ export default () => (
                     </Helmet>
                     <SectionWrapper>
                         <HeroBlock id="hero">
-                            <Header color={Palette.SandYellow}>An innovative digital language-learning adventure<br/>for A2 level learners</Header>
+                            <Header color={Palette.SandYellow}>An innovative digital English adventure<br/>for A2 level learners<br/><br/>...a FUN way to prepare for Cambridge exams!</Header>
                             <div className="video">
                             <iframe width="100%" height="100%" src="https://www.youtube.com/embed/3WqX_Ca6q98" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
