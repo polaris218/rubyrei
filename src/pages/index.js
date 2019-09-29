@@ -147,6 +147,18 @@ const HeroBlock = styled.div`
     }
 
     .store-badges {
+        display: block;
+        overflow: hidden;
+        margin-bottom: 16px;
+
+        & > a {
+            display: inline-block;
+            width: 228px;
+            height: 80px;
+
+            &:first-child { margin-right: 8px; }
+            &:last-child { margin-left: 8px; }
+        }
         ${Media.tablet`
             display: none;
         `}
@@ -172,6 +184,29 @@ const HeroBlock = styled.div`
             .dark-text {
                 color: black;
             }
+        `}
+    }
+
+    .mobile-ctas {
+        display: block;
+            overflow: hidden;
+            margin-bottom: 32px;
+
+            & > a {
+                display: inline-block;
+                width: 228px;
+                height: 61px;
+
+                &:first-child { margin-right: 8px; }
+                &:last-child { margin-left: 8px; }
+            }
+
+            .dark-text {
+                color: black;
+            }
+
+        ${Media.tablet`
+            display: none
         `}
     }
 
@@ -277,6 +312,10 @@ export default () => (
                             <div className="store-badges">
                                 <StoreBadge apple/>
                                 <StoreBadge google/>
+                            </div>
+                            <div className="mobile-ctas">
+                                <WibbuBtn className="cta-pdf" color="blue" href="https://firebasestorage.googleapis.com/v0/b/ruby-rei-setup/o/FUN-with-Ruby-Rei-Materials-Worksheets.zip?alt=media&token=33ab395f-d9f2-40ae-9f36-f51f868e5ac9">Worksheets (PDF)</WibbuBtn>
+                                <WibbuBtn color="light-green" href="http://help.rubyrei.com/en/collections/1786829-fun-with-ruby-rei-for-a2-flyers-school-version">Read our FAQs</WibbuBtn>
                             </div>
                             <Body xs>FUN with Ruby Rei is currently available in <b>Turkey</b> and <b>Mexico</b>.
                             <p>If you’d like to find out more about Ruby Rei for your country, please <a href="https://www.cambridge.org/cambridgeenglish/contact" target="_blank">contact your local Cambridge representative</a>.</p>
