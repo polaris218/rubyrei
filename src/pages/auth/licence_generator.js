@@ -14,6 +14,46 @@ if (typeof window !== `undefined`) {
 
 var date = new Date();
 
+const validEmailRegex = RegExp(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
+const validMultiEmailRegex = RegExp(/^(\s?[^\s,]+@[^\s,]+\.[^\s,]+\s?,)*(\s?[^\s,]+@[^\s,]+\.[^\s,]+)$/i);
+const validNumberRegex = RegExp(/^(-?\d+\.\d+)$|^(-?\d+)$/);
+
+const validateForm = (errors) => {
+    let valid = true;
+    Object.values(errors).forEach(
+      (val) => val.length > 0 && (valid = false)
+    );
+    return valid;
+  }
+  
+const countErrors = (errors) => {
+    let count = 0;
+    Object.values(errors).forEach(
+        (val) => val.length > 0 && (count = count+1)
+    );
+    return count;
+}
+
+const forms = 
+    [
+        'languagePair',
+        'purchaserSchool',
+        'numberOfLicenses',
+        'licenceType',
+        'purchaserEmail',
+        'sellerEmail'
+    ];
+
+const Error = styled.div`
+    color: #db2269;
+    font-size: 0.75em;    
+    margin-top: 7px;
+`;
+
+const P = styled.span`
+    margin-left: 10px;
+`;
+
 const MainWrapper = styled.div`
     display: block;
     max-width: 560px;
@@ -85,18 +125,87 @@ const langPacksMap = {
 };
 
 class PageLicenceGenerator extends React.Component {
+    form = React.createRef();
     state = {
         confirmOpen: false,
         isLoading: false,
-        completed: false
+        completed: false,
+        formValid: false,
+        errorCount: null,
+        errors: {
+          languagePair: '',
+          purchaserSchool: '',
+          numberOfLicenses: '',
+          licenceType: '',
+          purchaserEmail: '',
+          sellerEmail: ''
+        }
     }
 
-    _onChange = (evt) => {
-        this.setState({[evt.target.name]: evt.target.value});
+    _onChange = (evt, isSubmit) => {
+        if(!isSubmit)
+            evt.preventDefault();
+        const { name, value } = evt.target;
+        const index = forms.indexOf(name);
+        this.form.current[index > 3 ? index + 1 : index].value = value;    
+        let errors = this.state.errors;        
+        switch (name) {
+          case 'languagePair': 
+            errors.languagePair = 
+              value.length > 6
+                ? 'Please select a country.'
+                : '';
+            break;
+          case 'purchaserSchool': 
+            errors.purchaserSchool = 
+              value.length < 1
+                ? 'Please enter a school name.'
+                : '';  
+            break;
+          case 'numberOfLicenses':         
+            errors.numberOfLicenses = 
+              validNumberRegex.test(value)
+                ? 
+                    (value > 250
+                    ? 'You can create a maximum of 250 logins at one time.'
+                    :''
+                    )
+                : 'Please enter a valid number between 1 - 250.'
+              ;
+            break;
+          case 'licenceType': 
+            errors.licenceType = 
+              value.length < 1 
+                ? 'Please select a licence type'
+                : '';
+            break;
+          case 'purchaserEmail': 
+            errors.purchaserEmail = 
+              validMultiEmailRegex.test(value)
+                ? ''
+                : 'Email is not valid!';
+            break;
+          case 'sellerEmail':
+            errors.sellerEmail = 
+              validEmailRegex.test(value)
+                ? ''
+                : 'Email is not valid!';
+            break;            
+          default:
+            break;
+        }
+    
+        this.setState({errors, [name]: value});
     }
 
     _onSubmit = (evt) => {
         evt.preventDefault();
+            forms.map((item, key) =>
+            {                
+                this._onChange({target: {name: item, value: this.form.current[key > 3 ? key + 1 : key].value}}, true);
+            });
+        this.setState({ formValid: validateForm(this.state.errors )});
+        this.setState({ errorCount: countErrors(this.state.errors )});
         this.setState({ confirmOpen: true });
     }
 
@@ -161,6 +270,8 @@ class PageLicenceGenerator extends React.Component {
     }
 
     render() {
+        const {errors, formValid} = this.state;
+
         if(AuthService && !AuthService.isAuthenticated()) {
             navigate('/auth');
             return (<div></div>);
@@ -187,32 +298,45 @@ class PageLicenceGenerator extends React.Component {
                         }
 
                         {!this.state.completed &&
-                            <Form onSubmit={this._onSubmit}>
+                            <Form onSubmit={this._onSubmit} ref={this.form}>
                                 <FormGroup className="form-group" label="Which country are you in?">
-                                    <HTMLSelect name="languagePair" onChange={this._onChange}>
+                                    <HTMLSelect name="languagePair" ref={this.languagePair} onChange={this._onChange}>
                                         <option>Choose a country...</option>
                                         <option value="LALEN">Mexico</option>
                                         <option value="SPLEN">Spain</option>
                                         <option value="TULEN">Turkey</option>
                                     </HTMLSelect>
-                                </FormGroup>
+                                    {errors.languagePair.length > 0 && 
+                                        <Error>{errors.languagePair}</Error>}
+                                </FormGroup>                                
                                 <FormGroup className="form-group" label="School name">
                                     <InputGroup large placeholder="e.g. Cambridge School" name="purchaserSchool" onChange={this._onChange}/>
-                                </FormGroup>
+                                    {errors.purchaserSchool.length > 0 && 
+                                        <Error>{errors.purchaserSchool}</Error>}
+                                </FormGroup>                                                                
                                 <FormGroup className="form-group" label="Number of logins">
                                     <InputGroup large placeholder="e.g. 64" name="numberOfLicenses" onChange={this._onChange}/>
+                                    {errors.numberOfLicenses.length > 0 && 
+                                        <Error>{errors.numberOfLicenses}</Error>}
                                 </FormGroup>
                                 <RadioGroup inline className="form-group" label="Licence type" name="licenceType" onChange={this._onChange} selectedValue={this.state.licenceType}>
                                     <Radio label="Trial version" value="demo_v2"/>
-                                    <Radio label="Full version" value=""/>
+                                    <Radio label="Full version" value="demo_v1"/>
+                                    {errors.licenceType.length > 0 && 
+                                        <Error>{errors.licenceType}</Error>}
                                 </RadioGroup>
                                 <FormGroup className="form-group" label="Teacher or school email address">
-                                    <InputGroup large placeholder="e.g. teacher@school.com" type="email" name="purchaserEmail" onChange={this._onChange}/>
+                                    <InputGroup large placeholder="e.g. teacher@school.com" name="purchaserEmail" onChange={this._onChange}/>
+                                    {errors.purchaserEmail.length > 0 && 
+                                        <Error>{errors.purchaserEmail}</Error>}
                                 </FormGroup>
                                 <FormGroup className="form-group" label="Your email address">
                                     <InputGroup large placeholder="e.g. salesrep@acmecorp.com" type="email" name="sellerEmail" onChange={this._onChange}/>
+                                    {errors.sellerEmail.length > 0 && 
+                                        <Error>{errors.sellerEmail}</Error>}
                                 </FormGroup>
                                 <Button large intent="success" text="Generate" type="submit" />
+                                {this.state.errorCount !== null ? <P>Form is {formValid ? 'valid ✅' : 'invalid ❌'}</P> : ''}
                             </Form>
                         }
                     </SectionWrapper>
