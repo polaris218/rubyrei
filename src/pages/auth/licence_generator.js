@@ -16,7 +16,7 @@ var date = new Date();
 
 const validEmailRegex = RegExp(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
 const validMultiEmailRegex = RegExp(/^(\s?[^\s,]+@[^\s,]+\.[^\s,]+\s?,)*(\s?[^\s,]+@[^\s,]+\.[^\s,]+)$/i);
-const validNumberRegex = RegExp(/^(-?\d+\.\d+)$|^(-?\d+)$/);
+const validNumberRegex = RegExp(/^0*([1-9]|[1-8][0-9]|9[0-9]|1[0-9]{2}|2[0-4][0-9]|250)$/);
 
 const validateForm = (errors) => {
     let valid = true;
