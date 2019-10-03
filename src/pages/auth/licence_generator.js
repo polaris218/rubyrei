@@ -196,17 +196,18 @@ class PageLicenceGenerator extends React.Component {
         }
     
         this.setState({errors, [name]: value});
+        if(countErrors(errors) !== null && validateForm(errors) && isSubmit && index + 1 == 6)
+            this.setState({ confirmOpen: true });
     }
 
     _onSubmit = (evt) => {
         evt.preventDefault();
-            forms.map((item, key) =>
+        forms.map((item, key) =>
             {                
                 this._onChange({target: {name: item, value: this.form.current[key > 3 ? key + 1 : key].value}}, true);
             });
         this.setState({ formValid: validateForm(this.state.errors )});
         this.setState({ errorCount: countErrors(this.state.errors )});
-        this.setState({ confirmOpen: true });
     }
 
     _onCancelGeneration = (evt) => {
@@ -310,12 +311,12 @@ class PageLicenceGenerator extends React.Component {
                                         <Error>{errors.languagePair}</Error>}
                                 </FormGroup>                                
                                 <FormGroup className="form-group" label="School name">
-                                    <InputGroup large placeholder="e.g. Cambridge School" name="purchaserSchool" onChange={this._onChange}/>
+                                    <InputGroup large placeholder="e.g. Cambridge School" name="purchaserSchool" onBlur={this._onChange} />
                                     {errors.purchaserSchool.length > 0 && 
                                         <Error>{errors.purchaserSchool}</Error>}
                                 </FormGroup>                                                                
                                 <FormGroup className="form-group" label="Number of logins">
-                                    <InputGroup large placeholder="e.g. 64" name="numberOfLicenses" onChange={this._onChange}/>
+                                    <InputGroup large placeholder="e.g. 64" name="numberOfLicenses" onBlur={this._onChange}/>
                                     {errors.numberOfLicenses.length > 0 && 
                                         <Error>{errors.numberOfLicenses}</Error>}
                                 </FormGroup>
@@ -326,12 +327,12 @@ class PageLicenceGenerator extends React.Component {
                                         <Error>{errors.licenceType}</Error>}
                                 </RadioGroup>
                                 <FormGroup className="form-group" label="Teacher or school email address">
-                                    <InputGroup large placeholder="e.g. teacher@school.com" name="purchaserEmail" onChange={this._onChange}/>
+                                    <InputGroup large placeholder="e.g. teacher@school.com" name="purchaserEmail" onBlur={this._onChange}/>
                                     {errors.purchaserEmail.length > 0 && 
                                         <Error>{errors.purchaserEmail}</Error>}
                                 </FormGroup>
                                 <FormGroup className="form-group" label="Your email address">
-                                    <InputGroup large placeholder="e.g. salesrep@acmecorp.com" type="email" name="sellerEmail" onChange={this._onChange}/>
+                                    <InputGroup large placeholder="e.g. salesrep@acmecorp.com" type="email" name="sellerEmail" onBlur={this._onChange}/>
                                     {errors.sellerEmail.length > 0 && 
                                         <Error>{errors.sellerEmail}</Error>}
                                 </FormGroup>
