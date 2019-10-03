@@ -132,6 +132,7 @@ class PageLicenceGenerator extends React.Component {
         completed: false,
         formValid: false,
         errorCount: null,
+        isGenerate: false,
         errors: {
           languagePair: '',
           purchaserSchool: '',
@@ -195,7 +196,7 @@ class PageLicenceGenerator extends React.Component {
             break;
         }
     
-        this.setState({errors, [name]: value});
+        this.setState({errors, [name]: value, isGenerate: false });
         if(countErrors(errors) !== null && validateForm(errors) && isSubmit && index + 1 == 6)
             this.setState({ confirmOpen: true });
     }
@@ -206,8 +207,11 @@ class PageLicenceGenerator extends React.Component {
             {                
                 this._onChange({target: {name: item, value: this.form.current[key > 3 ? key + 1 : key].value}}, true);
             });
-        this.setState({ formValid: validateForm(this.state.errors )});
-        this.setState({ errorCount: countErrors(this.state.errors )});
+        this.setState({ 
+            formValid: validateForm(this.state.errors), 
+            errorCount: countErrors(this.state.errors),
+            isGenerate: true 
+        });
     }
 
     _onCancelGeneration = (evt) => {
@@ -337,7 +341,7 @@ class PageLicenceGenerator extends React.Component {
                                         <Error>{errors.sellerEmail}</Error>}
                                 </FormGroup>
                                 <Button large intent="success" text="Generate" type="submit" />
-                                {this.state.errorCount !== null ? <P>Form is {formValid ? 'valid ✅' : 'invalid ❌'}</P> : ''}
+                                {this.state.errorCount !== null && this.state.isGenerate ? <P>Form is {formValid ? 'valid ✅' : 'invalid ❌'}</P> : ''}
                             </Form>
                         }
                     </SectionWrapper>
