@@ -133,6 +133,7 @@ class PageLicenceGenerator extends React.Component {
         formValid: false,
         errorCount: null,
         isGenerate: false,
+        licenceType: '',
         errors: {
           languagePair: '',
           purchaserSchool: '',
@@ -144,11 +145,10 @@ class PageLicenceGenerator extends React.Component {
     }
 
     _onChange = (evt, isSubmit) => {
-        if(!isSubmit)
-            evt.preventDefault();
         const { name, value } = evt.target;
         const index = forms.indexOf(name);
-        this.form.current[index > 3 ? index + 1 : index].value = value;    
+        if(index != 3)
+            this.form.current[index > 3 ? index + 1 : index].value = value;    
         let errors = this.state.errors;        
         switch (name) {
           case 'languagePair': 
@@ -204,8 +204,11 @@ class PageLicenceGenerator extends React.Component {
     _onSubmit = (evt) => {
         evt.preventDefault();
         forms.map((item, key) =>
-            {                
-                this._onChange({target: {name: item, value: this.form.current[key > 3 ? key + 1 : key].value}}, true);
+            {    
+                if(key == 3)            
+                    this._onChange({target: {name: item, value: this.state[item]}}, true);
+                else
+                    this._onChange({target: {name: item, value: this.form.current[key > 3 ? key + 1 : key].value}}, true);
             });
         this.setState({ 
             formValid: validateForm(this.state.errors), 
