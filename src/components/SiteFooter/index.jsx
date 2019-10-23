@@ -104,7 +104,7 @@ export default (props) => (
     <SiteFooter id="site-footer">
         <div id="footer-nav">
             <nav>
-                <FooterNavLink href="http://help.rubyrei.com/en/collections/1786829-fun-with-ruby-rei-for-a2-flyers-school-version">FAQ</FooterNavLink>
+                <FooterNavLink href="http://help.rubyrei.com/">FAQ</FooterNavLink>
                 <FooterNavLink href="https://www.cambridge.org/cambridgeenglish/contact" target="_blank">Contact</FooterNavLink>
                 <FooterNavLink href="https://www.cambridge.org/about-us/legal-notices/privacy-notice/" target="_blank">Privacy Policy</FooterNavLink>
             </nav>

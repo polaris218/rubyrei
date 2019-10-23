@@ -307,7 +307,7 @@ export default () => (
                             <div className="desktop-ctas">
                                 <DownloadAppCta/>
                                 <WibbuBtn className="cta-pdf zoom" color="blue" href="https://firebasestorage.googleapis.com/v0/b/ruby-rei-setup/o/FUN-with-Ruby-Rei-Materials-Worksheets.zip?alt=media&token=33ab395f-d9f2-40ae-9f36-f51f868e5ac9">Worksheets (PDF)</WibbuBtn>
-                                <WibbuBtn className="zoom" color="light-green" href="http://help.rubyrei.com/en/collections/1786829-fun-with-ruby-rei-for-a2-flyers-school-version">Read our FAQs</WibbuBtn>
+                                <WibbuBtn className="zoom" color="light-green" href="http://help.rubyrei.com/">Need help?</WibbuBtn>
                             </div>
                             <div className="store-badges">
                                 <StoreBadge apple/>
@@ -315,7 +315,7 @@ export default () => (
                             </div>
                             <div className="mobile-ctas">
                                 <WibbuBtn className="cta-pdf" color="blue" href="https://firebasestorage.googleapis.com/v0/b/ruby-rei-setup/o/FUN-with-Ruby-Rei-Materials-Worksheets.zip?alt=media&token=33ab395f-d9f2-40ae-9f36-f51f868e5ac9">Worksheets (PDF)</WibbuBtn>
-                                <WibbuBtn color="light-green" href="http://help.rubyrei.com/en/collections/1786829-fun-with-ruby-rei-for-a2-flyers-school-version">Read our FAQs</WibbuBtn>
+                                <WibbuBtn color="light-green" href="http://help.rubyrei.com/">Need help?</WibbuBtn>
                             </div>
                             <Body xs>FUN with Ruby Rei is currently available in <b>Turkey</b> and <b>Mexico</b>.
                             <p>If you’d like to find out more about Ruby Rei for your country, please <a href="https://www.cambridge.org/cambridgeenglish/contact" target="_blank">contact your local Cambridge representative</a>.</p>
