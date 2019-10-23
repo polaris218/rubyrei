@@ -129,7 +129,7 @@ const HeroBlock = styled.div`
     h1 {
         font-size: 1.2em;
         margin-top: 32px;
-        margin-bottom: 32px;
+        margin-bottom: 40px;
 
         ${Media.tablet`
             display: block;
@@ -137,7 +137,7 @@ const HeroBlock = styled.div`
             max-width: 500px;
             margin: 0 auto;
             margin-top: 32px;
-            margin-bottom: 64px;
+            margin-bottom: 40px;
         `}
 
         ${Media.desktop`
@@ -170,7 +170,7 @@ const HeroBlock = styled.div`
         ${Media.tablet`
             display: block;
             overflow: hidden;
-            margin-bottom: 32px;
+            margin-bottom: 80px;
 
             & > a {
                 display: inline-block;
@@ -301,9 +301,6 @@ export default () => (
                     <SectionWrapper>
                         <HeroBlock id="hero">
                             <Header color={Palette.SandYellow}>An innovative digital English adventure<br/>for A2 level learners<br/><br/>...a FUN way to prepare for Cambridge exams!</Header>
-                            <div className="video">
-                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/3WqX_Ca6q98" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
                             <div className="desktop-ctas">
                                 <DownloadAppCta/>
                                 <WibbuBtn className="cta-pdf zoom" color="blue" href="https://firebasestorage.googleapis.com/v0/b/ruby-rei-setup/o/FUN-with-Ruby-Rei-Materials-Worksheets.zip?alt=media&token=33ab395f-d9f2-40ae-9f36-f51f868e5ac9">Worksheets (PDF)</WibbuBtn>
@@ -316,6 +313,9 @@ export default () => (
                             <div className="mobile-ctas">
                                 <WibbuBtn className="cta-pdf" color="blue" href="https://firebasestorage.googleapis.com/v0/b/ruby-rei-setup/o/FUN-with-Ruby-Rei-Materials-Worksheets.zip?alt=media&token=33ab395f-d9f2-40ae-9f36-f51f868e5ac9">Worksheets (PDF)</WibbuBtn>
                                 <WibbuBtn color="light-green" href="http://help.rubyrei.com/">Need help?</WibbuBtn>
+                            </div>
+                            <div className="video">
+                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/3WqX_Ca6q98" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                             <Body xs>FUN with Ruby Rei is currently available in <b>Turkey</b> and <b>Mexico</b>.
                             <p>If you’d like to find out more about Ruby Rei for your country, please <a href="https://www.cambridge.org/cambridgeenglish/contact" target="_blank">contact your local Cambridge representative</a>.</p>
