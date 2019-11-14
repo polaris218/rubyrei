@@ -47,8 +47,7 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const SiteWrapper = styled.div`
-
-    ${Media.desktop`
+  ${Media.desktop`
         display: block;
         overflow: hidden;
         max-width: 1440px;
@@ -59,14 +58,14 @@ const SiteWrapper = styled.div`
 `;
 
 const MainWrapper = styled.div`
-    display: block;
-    overflow: hidden;
-    background: ${Palette.MidnightGreen} url(${Background}) center top no-repeat; 
-    background-size: 220%;
-    padding: 0;
-    margin: 0;
+  display: block;
+  overflow: hidden;
+  background: ${Palette.MidnightGreen} url(${Background}) center top no-repeat;
+  background-size: 220%;
+  padding: 0;
+  margin: 0;
 
-    ${Media.tablet`
+  ${Media.tablet`
         background-size: cover;
         background-position: center 50%;
         min-height: 80vh;
@@ -74,32 +73,31 @@ const MainWrapper = styled.div`
 `;
 
 const HeroBlock = styled.div`
+  display: block;
+  overflow: hidden;
+  text-align: center;
+
+  .zoom {
+    transition: transform 0.125s;
+  }
+
+  .zoom:hover {
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari 3-8 */
+    transform: scale(1.1);
+    text-decoration: none;
+  }
+
+  .video {
     display: block;
-    overflow: hidden;
-    text-align: center;
+    width: 224px;
+    height: 176px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 32px;
+    box-shadow: 1px 1px 10px #000000aa;
 
-    .zoom {
-    transition: transform .125s;
-    }
-          
-    .zoom:hover {
-            -ms-transform: scale(1.1); /* IE 9 */
-            -webkit-transform: scale(1.1); /* Safari 3-8 */
-            transform: scale(1.1);
-            text-decoration: none;
-    }
-
-    .video {
-        display: block;
-        width: 224px;
-        height: 176px;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 32px;
-        box-shadow: 1px 1px 10px #000000AA;
-
-
-        ${Media.tablet`
+    ${Media.tablet`
         display: block;
         width: 448px;
         height: 252px;
@@ -109,8 +107,8 @@ const HeroBlock = styled.div`
         margin-right: auto;
         box-shadow: 2px 2px 10px #000000AA;
         `}
-            
-        ${Media.desktop`
+
+    ${Media.desktop`
             display: block;
             width: 560px;
             height: 315px;
@@ -120,18 +118,18 @@ const HeroBlock = styled.div`
             margin-right: auto;
             box-shadow: 2px 2px 10px #000000AA;
         `}
-    }
+  }
 
-    ${Media.tablet`
+  ${Media.tablet`
         padding-bottom: 80px;
     `}
 
-    h1 {
-        font-size: 1.2em;
-        margin-top: 32px;
-        margin-bottom: 40px;
+  h1 {
+    font-size: 1.2em;
+    margin-top: 32px;
+    margin-bottom: 40px;
 
-        ${Media.tablet`
+    ${Media.tablet`
             display: block;
             font-size: 1.3em;
             max-width: 500px;
@@ -140,34 +138,38 @@ const HeroBlock = styled.div`
             margin-bottom: 40px;
         `}
 
-        ${Media.desktop`
+    ${Media.desktop`
             max-width: 700px;
             font-size: 1.5m;
         `}
+  }
+
+  .store-badges {
+    display: block;
+    overflow: hidden;
+    margin-bottom: 16px;
+
+    & > a {
+      display: inline-block;
+      width: 228px;
+      height: 80px;
+
+      &:first-child {
+        margin-right: 8px;
+      }
+      &:last-child {
+        margin-left: 8px;
+      }
     }
-
-    .store-badges {
-        display: block;
-        overflow: hidden;
-        margin-bottom: 16px;
-
-        & > a {
-            display: inline-block;
-            width: 228px;
-            height: 80px;
-
-            &:first-child { margin-right: 8px; }
-            &:last-child { margin-left: 8px; }
-        }
-        ${Media.tablet`
+    ${Media.tablet`
             display: none;
         `}
-    }
+  }
 
-    .desktop-ctas {
-        display: none;
+  .desktop-ctas {
+    display: none;
 
-        ${Media.tablet`
+    ${Media.tablet`
             display: block;
             overflow: hidden;
             margin-bottom: 80px;
@@ -185,46 +187,50 @@ const HeroBlock = styled.div`
                 color: black;
             }
         `}
+  }
+
+  .mobile-ctas {
+    display: block;
+    overflow: hidden;
+    margin-bottom: 32px;
+
+    & > a {
+      display: inline-block;
+      width: 228px;
+      height: 61px;
+
+      &:first-child {
+        margin-right: 8px;
+      }
+      &:last-child {
+        margin-left: 8px;
+      }
     }
 
-    .mobile-ctas {
-        display: block;
-            overflow: hidden;
-            margin-bottom: 32px;
+    .dark-text {
+      color: black;
+    }
 
-            & > a {
-                display: inline-block;
-                width: 228px;
-                height: 61px;
-
-                &:first-child { margin-right: 8px; }
-                &:last-child { margin-left: 8px; }
-            }
-
-            .dark-text {
-                color: black;
-            }
-
-        ${Media.tablet`
+    ${Media.tablet`
             display: none
         `}
+  }
+
+  .pub-logos {
+    display: block;
+    overflow: hidden;
+    margin-top: 40px;
+    margin-bottom: 32px;
+
+    .cambridge-logos {
+      max-width: 260px;
     }
 
-    .pub-logos {
-        display: block;
-        overflow: hidden;
-        margin-top: 40px;
-        margin-bottom: 32px;
+    .wibbu-logos {
+      max-width: 60px;
+    }
 
-        .cambridge-logos {
-            max-width: 260px;
-        }
-
-        .wibbu-logos {
-            max-width: 60px;
-        }
-
-        ${Media.tablet`
+    ${Media.tablet`
             position: relative;
             height: 8em;
             max-width: 50%;
@@ -253,14 +259,14 @@ const HeroBlock = styled.div`
                 max-width: 100px;
             }
         `}
-    }
+  }
 `;
 
 const RubyFigure = styled.div`
-    display: none;
-    position: relative;
-    
-    ${Media.tablet`
+  display: none;
+  position: relative;
+
+  ${Media.tablet`
     display: block;
     position: absolute;
     bottom: 35%;
@@ -271,67 +277,122 @@ const RubyFigure = styled.div`
     height: 550px;
 `}
 
-    ${Media.desktop`
+  ${Media.desktop`
         bottom: 28%;
         right: 80px;
         width: 240px;
         height: 600px;
     `}
-
-
-
-
 `;
 
-
-
 export default () => (
-    <React.Fragment>
-        <GlobalStyle />
-        <SiteWrapper>
-            <MainWrapper>
-                <SiteHeader />
-                <div id="site-content">
-                    <Helmet>
-                        <title>FUN with Ruby Rei</title>
-                        <meta name="description" content="A2 Flyers Digital English Course" />
-                        <meta charSet="utf-8" />
-                        <link rel="canonical" href="https://fun.rubyrei.com" />
-                    </Helmet>
-                    <SectionWrapper>
-                        <HeroBlock id="hero">
-                            <Header color={Palette.SandYellow}>An innovative digital English adventure<br/>for A2 level learners<br/><br/>...a FUN way to prepare for Cambridge exams!</Header>
-                            <div className="desktop-ctas">
-                                <DownloadAppCta/>
-                                <WibbuBtn className="cta-pdf zoom" color="blue" href="https://firebasestorage.googleapis.com/v0/b/ruby-rei-setup/o/FUN-with-Ruby-Rei-Materials-Worksheets.zip?alt=media&token=33ab395f-d9f2-40ae-9f36-f51f868e5ac9">Worksheets (PDF)</WibbuBtn>
-                                <WibbuBtn className="zoom" color="light-green" href="http://help.rubyrei.com/">Need help?</WibbuBtn>
-                            </div>
-                            <div className="store-badges">
-                                <StoreBadge apple/>
-                                <StoreBadge google/>
-                            </div>
-                            <div className="mobile-ctas">
-                                <WibbuBtn className="cta-pdf" color="blue" href="https://firebasestorage.googleapis.com/v0/b/ruby-rei-setup/o/FUN-with-Ruby-Rei-Materials-Worksheets.zip?alt=media&token=33ab395f-d9f2-40ae-9f36-f51f868e5ac9">Worksheets (PDF)</WibbuBtn>
-                                <WibbuBtn color="light-green" href="http://help.rubyrei.com/">Need help?</WibbuBtn>
-                            </div>
-                            <div className="video">
-                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/3WqX_Ca6q98" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                            <Body xs>FUN with Ruby Rei is currently available in <b>Turkey</b> and <b>Mexico</b>.
-                            <p>If you’d like to find out more about Ruby Rei for your country, please <a href="https://www.cambridge.org/cambridgeenglish/contact" target="_blank">contact your local Cambridge representative</a>.</p>
-                            </Body>
-                            <div className="pub-logos">
-                                <div className="centered">
-                                    <p><img className="logo cambridge-logos" src={CambridgeLogos} alt="Cambridge University Press logo"/></p>
-                                    <p><img className="logo wibbu-logos" src={WibbuLogo} alt="Wibbu logo"/></p>
-                                </div>
-                            </div>
-                            <RubyFigure/>
-                        </HeroBlock>
-                    </SectionWrapper>
+  <React.Fragment>
+    <GlobalStyle />
+    <SiteWrapper>
+      <MainWrapper>
+        <SiteHeader />
+        <div id="site-content">
+          <Helmet>
+            <title>FUN with Ruby Rei</title>
+            <meta
+              name="description"
+              content="A2 Flyers Digital English Course"
+            />
+            <meta charSet="utf-8" />
+            <link rel="canonical" href="https://fun.rubyrei.com" />
+          </Helmet>
+          <SectionWrapper>
+            <HeroBlock id="hero">
+              <Header color={Palette.SandYellow}>
+                An innovative digital English adventure
+                <br />
+                for A2 level learners
+                <br />
+                <br />
+                ...a FUN way to prepare for Cambridge exams!
+              </Header>
+              <div className="desktop-ctas">
+                <DownloadAppCta />
+                <WibbuBtn
+                  className="cta-pdf zoom"
+                  color="blue"
+                  href="https://firebasestorage.googleapis.com/v0/b/ruby-rei-setup/o/FUN-with-Ruby-Rei-Materials-Worksheets.zip?alt=media&token=33ab395f-d9f2-40ae-9f36-f51f868e5ac9"
+                >
+                  Worksheets (PDF)
+                </WibbuBtn>
+                <WibbuBtn
+                  className="zoom"
+                  color="light-green"
+                  href="http://help.rubyrei.com/"
+                >
+                  Need help?
+                </WibbuBtn>
+              </div>
+              <div className="store-badges">
+                <StoreBadge apple />
+                <StoreBadge google />
+              </div>
+              <div className="mobile-ctas">
+                <WibbuBtn
+                  className="cta-pdf"
+                  color="blue"
+                  href="https://firebasestorage.googleapis.com/v0/b/ruby-rei-setup/o/FUN-with-Ruby-Rei-Materials-Worksheets.zip?alt=media&token=33ab395f-d9f2-40ae-9f36-f51f868e5ac9"
+                >
+                  Worksheets (PDF)
+                </WibbuBtn>
+                <WibbuBtn color="light-green" href="http://help.rubyrei.com/">
+                  Need help?
+                </WibbuBtn>
+              </div>
+              <div className="video">
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src="https://www.youtube.com/embed/3WqX_Ca6q98"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <Body xs>
+                FUN with Ruby Rei is currently available in <b>Turkey</b> and{" "}
+                <b>Mexico</b>.
+                <p>
+                  If you’d like to find out more about Ruby Rei for your
+                  country, please{" "}
+                  <a
+                    href="https://www.cambridge.org/cambridgeenglish/contact"
+                    target="_blank"
+                  >
+                    contact your local Cambridge representative
+                  </a>
+                  .
+                </p>
+              </Body>
+              <div className="pub-logos">
+                <div className="centered">
+                  <p>
+                    <img
+                      className="logo cambridge-logos"
+                      src={CambridgeLogos}
+                      alt="Cambridge University Press logo"
+                    />
+                  </p>
+                  <p>
+                    <img
+                      className="logo wibbu-logos"
+                      src={WibbuLogo}
+                      alt="Wibbu logo"
+                    />
+                  </p>
                 </div>
-            </MainWrapper>
-            <SiteFooter />
-        </SiteWrapper>
-    </React.Fragment>
+              </div>
+              <RubyFigure />
+            </HeroBlock>
+          </SectionWrapper>
+        </div>
+      </MainWrapper>
+      <SiteFooter />
+    </SiteWrapper>
+  </React.Fragment>
 );

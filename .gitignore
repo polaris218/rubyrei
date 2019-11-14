@@ -1,2 +1,7 @@
+node_modules/
 .cache/
 settings.json
+public/
+
+#Yarn
+yarn-error.log
