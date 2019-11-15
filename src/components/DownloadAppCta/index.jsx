@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import { withTranslation } from "react-i18next";
+
 import { WibbuBtn } from "../Buttons";
 import { TextModal } from "../Modal";
 
@@ -39,6 +41,8 @@ class DownloadAppCta extends React.Component {
 
   render() {
     const displaySpeedbump = this.state.showSpeedbump ? "block" : "none";
+    const { t } = this.props;
+
     return (
       <React.Fragment>
         <WibbuBtn
@@ -46,31 +50,30 @@ class DownloadAppCta extends React.Component {
           color="pink"
           onClick={this._confirmDownload}
         >
-          Download (PC)
+          {t("download")}
         </WibbuBtn>
         <DownloadModal style={{ display: displaySpeedbump }}>
           <p>
-            You are about to download FUN with Ruby Rei on this computer
-            (835MB). <br />
-            If you don't have a login, please{" "}
+            {t("download.pc")} <br />
+            {t("login.please")} {" "}
             <a
               href="https://www.cambridge.org/cambridgeenglish/contact"
               target="_blank"
             >
-              contact us
+              {t("contact.us")}
             </a>{" "}
-            before downloading.
+            {t("before.downloading")}
           </p>
-          <p>Do you wish to continue?</p>
+          <p>{t("want.continue")}</p>
           <footer>
             <a
               className="modal-btn"
               href="https://firebasestorage.googleapis.com/v0/b/ruby-rei-setup/o/FUN%20with%20Ruby%20Rei%20Setup%20v3-0-0b8.exe?alt=media&token=74f6b83d-9c0a-4620-9ea4-929619232ee7"
             >
-              YES
+              {t("yes")}
             </a>
             <a className="modal-btn" onClick={this._cancelDownload}>
-              NO
+              {t("no")}
             </a>
           </footer>
         </DownloadModal>
@@ -80,4 +83,4 @@ class DownloadAppCta extends React.Component {
   }
 }
 
-export default DownloadAppCta;
+export default withTranslation()(DownloadAppCta);
