@@ -47,5 +47,8 @@
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
-  }
+  },
+  "sideEffects": [
+    "./src/i18n.js"
+  ]
 }

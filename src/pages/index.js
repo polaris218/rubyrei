@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 import styled from "styled-components";
 import { withTranslation } from "react-i18next";
 import reset from "normalize.css";
+import i18n from "i18next";
 
 import { Media } from "../components/Utils";
 import { Header } from "../components/Typography";
@@ -287,119 +288,125 @@ const RubyFigure = styled.div`
     `}
 `;
 
-const Index = (props) => {
+/**
+ * @function t() Function which translating based on broswer lanaguase
+ * @function withTranslation() HOC(Higher Order Component) and gets the t() function. Pass the i18n instance inside the component
+ *
+ */
+
+const Index = props => {
   const { t } = props;
-  
+
   return (
     <React.Fragment>
-        <GlobalStyle />
-        <SiteWrapper>
-          <MainWrapper>
-            <SiteHeader />
-            <div id="site-content">
-              <Helmet>
+      <GlobalStyle />
+      <SiteWrapper>
+        <MainWrapper>
+          <SiteHeader />
+          <div id="site-content">
+            <Helmet>
               <title>{t("title")}</title>
-                <meta
-                  name="description"
-                  content="A2 Flyers Digital English Course"
-                />
-                <meta charSet="utf-8" />
-                <link rel="canonical" href="https://fun.rubyrei.com" />
-              </Helmet>
-              <SectionWrapper>
-                <HeroBlock id="hero">
-                  <Header color={Palette.SandYellow}>
-                    {t("center.title.up")}
-                    <br />
-                    {t("center.title.middle")}
-                    <br />
-                    <br />
-                    {t("center.title.bottom")}
-                  </Header>
-                  <div className="desktop-ctas">
-                    <DownloadAppCta />
-                    <WibbuBtn
-                      className="cta-pdf zoom"
-                      color="blue"
-                      href="https://firebasestorage.googleapis.com/v0/b/ruby-rei-setup/o/FUN-with-Ruby-Rei-Materials-Worksheets.zip?alt=media&token=33ab395f-d9f2-40ae-9f36-f51f868e5ac9"
-                    >
-                      {t("worksheet")}
-                    </WibbuBtn>
-                    <WibbuBtn
-                      className="zoom"
-                      color="light-green"
-                      href="http://help.rubyrei.com/"
-                    >
-                      {t("needhelp")}
-                    </WibbuBtn>
-                  </div>
-                  <div className="store-badges">
-                    <StoreBadge apple />
-                    <StoreBadge google />
-                  </div>
-                  <div className="mobile-ctas">
-                    <WibbuBtn
-                      className="cta-pdf"
-                      color="blue"
-                      href="https://firebasestorage.googleapis.com/v0/b/ruby-rei-setup/o/FUN-with-Ruby-Rei-Materials-Worksheets.zip?alt=media&token=33ab395f-d9f2-40ae-9f36-f51f868e5ac9"
-                    >
-                      {t("worksheet")}
-                    </WibbuBtn>
-                    <WibbuBtn color="light-green" href="http://help.rubyrei.com/">
-                      {t("needhelp")}
-                    </WibbuBtn>
-                  </div>
-                  <div className="video">
-                    <iframe
-                      width="100%"
-                      height="100%"
-                      src="https://www.youtube.com/embed/3WqX_Ca6q98"
-                      frameborder="0"
-                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                      allowfullscreen
-                    ></iframe>
-                  </div>
-                  <Body xs>
-                  { t("fun.with.ruby.Rei") } <b>{ t("turkey") }</b> {t("and")}{" "}
+              <meta
+                name="description"
+                content="A2 Flyers Digital English Course"
+              />
+              <meta charSet="utf-8" />
+              <link rel="canonical" href="https://fun.rubyrei.com" />
+            </Helmet>
+            <SectionWrapper>
+              <HeroBlock id="hero">
+                <Header color={Palette.SandYellow}>
+                  {t("center.title.up")}
+                  <br />
+                  {t("center.title.middle")}
+                  <br />
+                  <br />
+                  {t("center.title.bottom")}
+                </Header>
+                <div className="desktop-ctas">
+                  <DownloadAppCta />
+                  <WibbuBtn
+                    className="cta-pdf zoom"
+                    color="blue"
+                    href="https://firebasestorage.googleapis.com/v0/b/ruby-rei-setup/o/FUN-with-Ruby-Rei-Materials-Worksheets.zip?alt=media&token=33ab395f-d9f2-40ae-9f36-f51f868e5ac9"
+                  >
+                    {t("worksheet")}
+                  </WibbuBtn>
+                  <WibbuBtn
+                    className="zoom"
+                    color="light-green"
+                    href="http://help.rubyrei.com/"
+                  >
+                    {t("needhelp")}
+                  </WibbuBtn>
+                </div>
+                <div className="store-badges">
+                  <StoreBadge apple />
+                  <StoreBadge google />
+                </div>
+                <div className="mobile-ctas">
+                  <WibbuBtn
+                    className="cta-pdf"
+                    color="blue"
+                    href="https://firebasestorage.googleapis.com/v0/b/ruby-rei-setup/o/FUN-with-Ruby-Rei-Materials-Worksheets.zip?alt=media&token=33ab395f-d9f2-40ae-9f36-f51f868e5ac9"
+                  >
+                    {t("worksheet")}
+                  </WibbuBtn>
+                  <WibbuBtn color="light-green" href="http://help.rubyrei.com/">
+                    {t("needhelp")}
+                  </WibbuBtn>
+                </div>
+                <div className="video">
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    src="https://www.youtube.com/embed/3WqX_Ca6q98"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+                <Body xs>
+                  {t("fun.with.ruby.Rei")} <b>{t("turkey")}</b> {t("and")}{" "}
                   <b>{t("mexico")}</b>.
+                  <p>
+                    {t("more.about.ruby.Rei")}{" "}
+                    <a
+                      href="https://www.cambridge.org/cambridgeenglish/contact"
+                      target="_blank"
+                    >
+                      {t("local.cambridge")}
+                    </a>
+                    .
+                  </p>
+                </Body>
+                <div className="pub-logos">
+                  <div className="centered">
                     <p>
-                      {t("more.about.ruby.Rei")}{" "}
-                      <a
-                        href="https://www.cambridge.org/cambridgeenglish/contact"
-                        target="_blank"
-                      >
-                        {t("local.cambridge")}
-                      </a>
-                      .
+                      <img
+                        className="logo cambridge-logos"
+                        src={CambridgeLogos}
+                        alt="Cambridge University Press logo"
+                      />
                     </p>
-                  </Body>
-                  <div className="pub-logos">
-                    <div className="centered">
-                      <p>
-                        <img
-                          className="logo cambridge-logos"
-                          src={CambridgeLogos}
-                          alt="Cambridge University Press logo"
-                        />
-                      </p>
-                      <p>
-                        <img
-                          className="logo wibbu-logos"
-                          src={WibbuLogo}
-                          alt="Wibbu logo"
-                        />
-                      </p>
-                    </div>
+                    <p>
+                      <img
+                        className="logo wibbu-logos"
+                        src={WibbuLogo}
+                        alt="Wibbu logo"
+                      />
+                    </p>
                   </div>
-                  <RubyFigure />
-                </HeroBlock>
-              </SectionWrapper>
-            </div>
-          </MainWrapper>
-          <SiteFooter />
+                </div>
+                <RubyFigure />
+              </HeroBlock>
+            </SectionWrapper>
+          </div>
+        </MainWrapper>
+        <SiteFooter />
       </SiteWrapper>
-      </React.Fragment>
-  )
+    </React.Fragment>
+  );
 };
 
 export default withTranslation()(Index);
