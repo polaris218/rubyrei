@@ -113,7 +113,9 @@ const SiteFooters = props => {
       {console.log(props)}
       <div id="footer-nav">
         <nav>
-          <FooterNavLink href="http://help.rubyrei.com/">FAQ</FooterNavLink>
+          <FooterNavLink href="http://help.rubyrei.com/">
+            {t("faq")}
+          </FooterNavLink>
           <FooterNavLink
             href="https://www.cambridge.org/cambridgeenglish/contact"
             target="_blank"
