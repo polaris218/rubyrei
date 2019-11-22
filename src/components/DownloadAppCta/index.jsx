@@ -28,7 +28,9 @@ const DownloadModal = styled(TextModal)`
 
 class DownloadAppCta extends React.Component {
   state = {
-    showSpeedbump: false
+    showSpeedbump: false,
+    device: typeof window !== `undefined` && 
+      navigator.userAgent.indexOf('WOW64')>-1 || window.navigator.platform=='Win64'? true: false,
   };
 
   _confirmDownload = () => {
@@ -45,13 +47,15 @@ class DownloadAppCta extends React.Component {
 
     return (
       <React.Fragment>
-        <WibbuBtn
-          className="cta-app zoom"
-          color="pink"
-          onClick={this._confirmDownload}
-        >
-          {t("download")}
-        </WibbuBtn>
+        <a href="#">
+          <WibbuBtn
+            className="cta-app zoom"
+            color="pink"
+            onClick={this._confirmDownload}
+          >
+            {t("download")}
+          </WibbuBtn>
+        </a>
         <DownloadModal style={{ display: displaySpeedbump }}>
           <p>
             {t("download.pc")} <br />
@@ -68,7 +72,11 @@ class DownloadAppCta extends React.Component {
           <footer>
             <a
               className="modal-btn"
-              href="https://firebasestorage.googleapis.com/v0/b/ruby-rei-setup/o/FUN%20with%20Ruby%20Rei%20Setup%20v3-0-0b8.exe?alt=media&token=74f6b83d-9c0a-4620-9ea4-929619232ee7"
+              href={
+                !this.state.device
+                  ? `https://firebasestorage.googleapis.com/v0/b/ruby-rei-setup/o/FUN%20with%20Ruby%20Rei%20Setup%20v3-0-0b8.exe?alt=media&token=74f6b83d-9c0a-4620-9ea4-929619232ee7`
+                  : `https://firebasestorage.googleapis.com/v0/b/ruby-rei-setup/o/FUN%20with%20Ruby%20Rei%20Setup%20v3-0-0b8%2032-bit.exe?alt=media&token=1fd5f6cf-b640-441f-96f5-45ccae286a5d`
+              }
             >
               {t("yes")}
             </a>
