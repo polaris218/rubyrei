@@ -13,18 +13,18 @@ const COLORS = {
     'light-green': LightGreenButtonBg
 }
 
-export default styled.button`
-    display: inline-flex;
+export default styled.a`
+    display: block;
     color: #FFFFFF;
     text-transform: uppercase;
     background-image: url(${props => COLORS[props.color]});
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: cover;
-    background-color: Transparent;
-    border: none;
+    background-size: contain;
+    // background-color: Transparent;
+    // border: none;
     padding: 20px 40px;
-    margin-right: 30px;
+    // margin-right: 30px;
     &:hover {
         color: #fff;
         text-decoration: none;

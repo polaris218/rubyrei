@@ -47,15 +47,14 @@ class DownloadAppCta extends React.Component {
 
     return (
       <React.Fragment>
-        <a href="#">
-          <WibbuBtn
-            className="cta-app zoom"
-            color="pink"
-            onClick={this._confirmDownload}
-          >
-            {t("download")}
-          </WibbuBtn>
-        </a>
+        <WibbuBtn
+          className="cta-app zoom"
+          color="pink"
+          onClick={this._confirmDownload}
+          href="/"
+        >
+          {t("download")}
+        </WibbuBtn>
         <DownloadModal style={{ display: displaySpeedbump }}>
           <p>
             {t("download.pc")} <br />

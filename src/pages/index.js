@@ -170,17 +170,15 @@ const HeroBlock = styled.div`
   }
 
   .desktop-ctas {
-    display: none;
-
     ${Media.tablet`
-            display: block;
+            display: inline-flex;
             overflow: hidden;
             margin-bottom: 80px;
 
             & > a {
                 display: inline-block;
-                // width: 228px;
-                // height: 61px;
+                width: 228px;
+                height: 61px;
 
                 &:first-child { margin-right: 8px; }
                 &:last-child { margin-left: 8px; }
@@ -325,25 +323,20 @@ const Index = props => {
                 </Header>
                 <div className="desktop-ctas">
                   <DownloadAppCta />
-                  <a 
-                    href="https://firebasestorage.googleapis.com/v0/b/ruby-rei-setup/o/FUN-with-Ruby-Rei-Materials-Worksheets.zip?alt=media&token=33ab395f-d9f2-40ae-9f36-f51f868e5ac9"
-                  >
                     <WibbuBtn
                       className="cta-pdf zoom"
                       color="blue"
-                      
+                      href="https://firebasestorage.googleapis.com/v0/b/ruby-rei-setup/o/FUN-with-Ruby-Rei-Materials-Worksheets.zip?alt=media&token=33ab395f-d9f2-40ae-9f36-f51f868e5ac9"  
                     >
                       {t("worksheet")}
                     </WibbuBtn>
-                  </a>
-                  <a href="http://help.rubyrei.com/">
                     <WibbuBtn
                       className="zoom"
                       color="light-green"
+                      href="http://help.rubyrei.com/"
                     >
                       {t("needhelp")}
                     </WibbuBtn>
-                  </a>
                 </div>
                 <div className="store-badges">
                   <StoreBadge apple />
