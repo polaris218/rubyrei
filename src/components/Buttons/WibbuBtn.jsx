@@ -13,7 +13,7 @@ const COLORS = {
     'light-green': LightGreenButtonBg
 }
 
-export default styled.a`
+export default styled.div`
     display: block;
     color: #FFFFFF;
     text-transform: uppercase;
@@ -23,8 +23,9 @@ export default styled.a`
     background-size: contain;
     // background-color: Transparent;
     // border: none;
-    padding: 20px 40px;
-    // margin-right: 30px;
+    width: 215px;
+    padding: 22px 40px;
+    margin-right: 30px;
     &:hover {
         color: #fff;
         text-decoration: none;

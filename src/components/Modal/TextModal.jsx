@@ -10,7 +10,7 @@ export default styled.div`
     background-image: url(${TextPopupBg});
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: 550px 200px;
+    background-size: 600px 200px;
     z-index: 99;
     padding: 40px;
     margin: 0 auto;

@@ -44,20 +44,28 @@ class DownloadAppCta extends React.Component {
   render() {
     const displaySpeedbump = this.state.showSpeedbump ? "block" : "none";
     const { t } = this.props;
+    const lng = window.navigator.language || window.navigator.userLanguage;
 
     return (
       <React.Fragment>
-        <WibbuBtn
-          className="cta-app zoom"
-          color="pink"
-          onClick={this._confirmDownload}
-          href="/"
-        >
-          {t("download")}
-        </WibbuBtn>
+        <a href="#" style={{textDecoration: 'none'}}>
+          <WibbuBtn
+            className="cta-app zoom"
+            color="pink"
+            onClick={this._confirmDownload}
+          >
+            <p
+              style={lng === `tr-TR` || lng === `es-ES` ? {marginTop: '15px'}: {marginTop: '5px'}}
+            >{ t("download") }</p>
+          </WibbuBtn>
+        </a>
         <DownloadModal style={{ display: displaySpeedbump }}>
           <p>
-            {t("download.pc")} <br />
+            { !this.state.device 
+              ? t("download.pc.64bit")
+              : t("download.pc.32bit")
+            }
+            <br />
             {t("login.please")} {" "}
             <a
               href="https://www.cambridge.org/cambridgeenglish/contact"
