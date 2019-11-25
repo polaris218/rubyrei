@@ -171,7 +171,7 @@ const HeroBlock = styled.div`
   .desktop-ctas {
     ${Media.tablet`
             display: inline-flex;
-            overflow: hidden;
+            // overflow: hidden;
             margin-bottom: 80px;
 
             & > a {
@@ -326,7 +326,7 @@ const Index = props => {
                   <WibbuBtn className="cta-pdf zoom" color="blue">
                     <a
                       href="https://firebasestorage.googleapis.com/v0/b/ruby-rei-setup/o/FUN-with-Ruby-Rei-Materials-Worksheets.zip?alt=media&token=33ab395f-d9f2-40ae-9f36-f51f868e5ac9"
-                      style={{ textDecoration: "none" }}
+                      style={{ textDecoration: "none", color: "white" }}
                     >
                       <p
                         style={
