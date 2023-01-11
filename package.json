@@ -23,7 +23,7 @@
     "gatsby-plugin-intercom": "^0.1.4",
     "gatsby-plugin-styled-components": "^3.0.7",
     "gatsby-remark-embed-video": "^1.7.1",
-    "gatsby-transformer-remark": "^2.6.10",
+    "gatsby-transformer-remark": "^5.25.1",
     "i18next": "^19.0.0",
     "i18next-browser-languagedetector": "^4.0.1",
     "i18next-xhr-backend": "^3.2.2",
